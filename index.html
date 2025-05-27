@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio do Kaique</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #0d0d0d;
+      color: #e1e1e1;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(to right, #1e1e1e, #2c003e);
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #a64aff;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #c7c7c7;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(166, 74, 255, 0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #a64aff;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #a64aff;
+      padding-bottom: 8px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      color: #d4d4d4;
+    }
+
+    .skill-item img {
+      width: 32px;
+      height: 32px;
+      margin-right: 12px;
+      border-radius: 4px;
+      background-color: #000;
+      padding: 3px;
+      object-fit: contain;
+    }
+
+    li {
+      margin-bottom: 12px;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      color: #a64aff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1e1e1e;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: #a64aff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      .skill-item {
+        font-size: 1rem;
+      }
+
+      .skill-item img {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portfólio de Kaique</h1>
+    <p>Estudante de Redes de Computadores • Focado em Cloud, Monitoramento e Virtualização</p>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>Especializações</h2>
+      <ul>
+        <li class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" />
+          AWS (Amazon Web Services)
+        </li>
+        <li class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" />
+          Microsoft Azure
+        </li>
+        <li class="skill-item">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq1lcL-U4Aeblv7R8SkiQTxzxcdVVQxr_8OA&s" alt="PFsense" />
+          PFSense
+        </li>
+        <li class="skill-item">
+          <img src="https://grafana.com/static/img/menu/grafana2.svg" alt="Grafana" />
+          Grafana
+        </li>
+        <li class="skill-item">
+          <img src="https://i0.wp.com/loredata.app/wp-content/uploads/2018/10/ZABBIX.png?fit=1680%2C1680&ssl=1" alt="Zabbix" />
+          Zabbix
+        </li>
+        <li class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" alt="Windows Server" />
+          Windows Server
+        </li>
+        <li class="skill-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" />
+          Linux (diversas distribuições)
+        </li>
+        <li class="skill-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Vmware_workstation_16_icon.svg/250px-Vmware_workstation_16_icon.svg.png" alt="VMware" />
+          VMware
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Certificações</h2>
+      <ul>
+        <li>
+          <a href="https://www.credly.com/earner/earned/badge/89226e14-49e2-43e0-8e09-b90a244951f7" target="_blank" rel="noopener">
+            Cisco Introduction To Networks - Cisco NetAcademy
+          </a>
+        </li>
+        <li>
+          <a href="https://www.credly.com/badges/afe53874-04d2-4187-91d7-b85e94785289/linked_in_profile" target="_blank" rel="noopener">
+            AWS Academy Cloud Foundations - AWS Academy
+          </a>
+        </li>
+        <li>
+          <a href="https://www.sp.senai.br/consulta-certificado?qrcode=13425154447/15059858" target="_blank" rel="noopener">
+            Microsoft Azure IA 900 - Senai Microsoft Azure
+          </a>
+        </li>
+        <li>
+          <a href="https://www.credly.com/badges/fe82c8d8-7e2e-4f47-8bef-b5bc9c616e6d" target="_blank" rel="noopener">
+            Cisco Switching Routing - CCNA Switching, Routing, and Wireless Essentials
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Kaique. Desenvolvido com 💻 e ☕ | <a href="#">Voltar ao topo</a></p>
+  </footer>
+</body>
+</html>
