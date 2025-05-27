@@ -1,214 +1,205 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfólio do Kaique</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaique Betti | Portfólio</title>
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #0d0d0d;
-      color: #e1e1e1;
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-
+    body {
+      font-family: 'Fira Code', monospace;
+      background: #1f1129;
+      color: #e0d4f7;
+    }
     header {
-      background: linear-gradient(to right, #1e1e1e, #2c003e);
-      padding: 40px 20px;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: #a64aff;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: #c7c7c7;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 30px;
-      background-color: #1a1a1a;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(166, 74, 255, 0.2);
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      color: #a64aff;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #a64aff;
-      padding-bottom: 8px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .skill-item {
+      position: relative;
+      height: 300px;
+      background: linear-gradient(135deg, #46295A, #2e193e);
       display: flex;
       align-items: center;
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-      color: #d4d4d4;
+      justify-content: center;
+      overflow: hidden;
+      animation: headerSlide 1s ease-out;
     }
-
-    .skill-item img {
-      width: 32px;
-      height: 32px;
-      margin-right: 12px;
-      border-radius: 4px;
-      background-color: #000;
-      padding: 3px;
-      object-fit: contain;
+    @keyframes headerSlide {
+      0% { transform: translateY(-100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
     }
-
-    li {
-      margin-bottom: 12px;
-      padding-left: 30px;
-      position: relative;
-    }
-
-    li::before {
-      content: "✦";
+    header::before, header::after {
+      content: "";
       position: absolute;
-      left: 0;
-      color: #a64aff;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+      animation: float 10s ease-in-out infinite;
     }
-
+    header::after {
+      animation-delay: 5s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -50%) scale(1.2); }
+    }
+    .header-content {
+      position: relative;
+      text-align: center;
+      z-index: 1;
+    }
+    .header-content h1 {
+      font-size: 3em;
+      color: #fff;
+      animation: fadeInDown 1.2s ease-out;
+    }
+    .header-content p {
+      color: #b99de7;
+      font-size: 1.2em;
+      animation: fadeInUp 2s ease-out;
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    section {
+      max-width: 960px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h2 {
+      border-bottom: 2px solid #6e46a1;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .stack-icons img, .badges img {
+      height: 32px;
+      margin: 5px;
+    }
+    .cert-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .cert-table th, .cert-table td {
+      border: 1px solid #6e46a1;
+      padding: 10px;
+      text-align: left;
+    }
+    .cert-table a {
+      color: #caa0ff;
+      text-decoration: none;
+    }
+    .cert-table a:hover {
+      text-decoration: underline;
+    }
+    .projetos li {
+      margin-bottom: 10px;
+    }
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #1e1e1e;
-      color: #888;
-      font-size: 0.9rem;
+      background-color: #2e193e;
+      color: #b99de7;
     }
-
-    a {
-      color: #a64aff;
+    .social a {
+      margin: 0 10px;
+      color: #c5a3ff;
       text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .container {
-        margin: 20px;
-        padding: 20px;
-      }
-
-      .skill-item {
-        font-size: 1rem;
-      }
-
-      .skill-item img {
-        width: 28px;
-        height: 28px;
-      }
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Portfólio de Kaique</h1>
-    <p>Estudante de Redes de Computadores • Focado em Cloud, Monitoramento e Virtualização</p>
+    <div class="header-content">
+      <h1>Kaique Betti 🦇</h1>
+      <p>Network Monitoring | Infrastructure Engineer</p>
+    </div>
   </header>
 
-  <div class="container">
-    <section>
-      <h2>Especializações</h2>
-      <ul>
-        <li class="skill-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" />
-          AWS (Amazon Web Services)
-        </li>
-        <li class="skill-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" />
-          Microsoft Azure
-        </li>
-        <li class="skill-item">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq1lcL-U4Aeblv7R8SkiQTxzxcdVVQxr_8OA&s" alt="PFsense" />
-          PFSense
-        </li>
-        <li class="skill-item">
-          <img src="https://grafana.com/static/img/menu/grafana2.svg" alt="Grafana" />
-          Grafana
-        </li>
-        <li class="skill-item">
-          <img src="https://i0.wp.com/loredata.app/wp-content/uploads/2018/10/ZABBIX.png?fit=1680%2C1680&ssl=1" alt="Zabbix" />
-          Zabbix
-        </li>
-        <li class="skill-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" alt="Windows Server" />
-          Windows Server
-        </li>
-        <li class="skill-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" />
-          Linux (diversas distribuições)
-        </li>
-        <li class="skill-item">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Vmware_workstation_16_icon.svg/250px-Vmware_workstation_16_icon.svg.png" alt="VMware" />
-          VMware
-        </li>
-      </ul>
-    </section>
+  <section>
+    <h2>Sobre mim</h2>
+    <p>Estudante de Redes de Computadores pelo SENAI, com experiência em infraestrutura de TI, suporte técnico e monitoramento de redes. Atuei com cabeamento estruturado, configuração de roteadores e switches, e suporte em ambientes Windows e Linux. Tenho facilidade em diagnosticar falhas e estou sempre em busca de evolução técnica na área de redes e monitoramento.</p>
+    <p><em>"Estou exatamente onde queria estar"</em></p>
+  </section>
 
-    <section>
-      <h2>Certificações</h2>
-      <ul>
-        <li>
-          <a href="https://www.credly.com/earner/earned/badge/89226e14-49e2-43e0-8e09-b90a244951f7" target="_blank" rel="noopener">
-            Cisco Introduction To Networks - Cisco NetAcademy
-          </a>
-        </li>
-        <li>
-          <a href="https://www.credly.com/badges/afe53874-04d2-4187-91d7-b85e94785289/linked_in_profile" target="_blank" rel="noopener">
-            AWS Academy Cloud Foundations - AWS Academy
-          </a>
-        </li>
-        <li>
-          <a href="https://www.sp.senai.br/consulta-certificado?qrcode=13425154447/15059858" target="_blank" rel="noopener">
-            Microsoft Azure IA 900 - Senai Microsoft Azure
-          </a>
-        </li>
-        <li>
-          <a href="https://www.credly.com/badges/fe82c8d8-7e2e-4f47-8bef-b5bc9c616e6d" target="_blank" rel="noopener">
-            Cisco Switching Routing - CCNA Switching, Routing, and Wireless Essentials
-          </a>
-        </li>
-      </ul>
-    </section>
-  </div>
+  <section>
+    <h2>Tech Stack</h2>
+    <div class="stack-icons">
+      <img src="https://skillicons.dev/icons?i=aws,azure,arduino,debian,git,grafana,linux,nginx,powershell,ubuntu,vscode,windows,github,html" alt="Tech stack">
+    </div>
+    <div class="badges">
+      <img src="https://img.shields.io/badge/ChatGPT-74aa9c?logo=openai&logoColor=white">
+      <img src="https://img.shields.io/badge/Obsidian-%23483699.svg?&logo=obsidian&logoColor=white">
+      <img src="https://img.shields.io/badge/Miro-050038?logo=miro&logoColor=fff">
+      <img src="https://img.shields.io/badge/Trello-0052CC?logo=trello&logoColor=fff">
+      <img src="https://img.shields.io/badge/Notion-000?logo=notion&logoColor=fff">
+    </div>
+  </section>
+
+  <section>
+    <h2>Certificações</h2>
+    <table class="cert-table">
+      <tr>
+        <th>Certificação</th>
+        <th>Nome</th>
+      </tr>
+      <tr>
+        <td><a href="https://www.credly.com/earner/earned/badge/89226e14-49e2-43e0-8e09-b90a244951f7" target="_blank">Cisco ITN</a></td>
+        <td><a href="https://www.credly.com/earner/earned/badge/89226e14-49e2-43e0-8e09-b90a244951f7" target="_blank">Introduction to Networks</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://www.credly.com/badges/afe53874-04d2-4187-91d7-b85e94785289/linked_in_profile" target="_blank">AWS Cloud Foundations</a></td>
+        <td><a href="https://www.credly.com/badges/afe53874-04d2-4187-91d7-b85e94785289/linked_in_profile" target="_blank">AWS Academy Cloud Foundations</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://www.sp.senai.br/consulta-certificado?qrcode=13425154447/15059858" target="_blank">Azure IA 900</a></td>
+        <td><a href="https://www.sp.senai.br/consulta-certificado?qrcode=13425154447/15059858" target="_blank">Microsoft Azure IA 900 - SENAI</a></td>
+      </tr>
+      <tr>
+        <td><a href="https://www.credly.com/badges/fe82c8d8-7e2e-4f47-8bef-b5bc9c616e6d" target="_blank">CCNA SRWE</a></td>
+        <td><a href="https://www.credly.com/badges/fe82c8d8-7e2e-4f47-8bef-b5bc9c616e6d" target="_blank">Switching, Routing and Wireless Essentials</a></td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Conquistas</h2>
+    <ul>
+      <li>Curso técnico de redes</li>
+      <li>Certificação AZ Microsoft AI 900</li>
+      <li>CCNA: Switching, Routing, and Wireless Essentials</li>
+      <li>CCNA: Introduction to Networks</li>
+      <li>AWS Academy Cloud Foundations</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Projetos</h2>
+    <ul class="projetos">
+      <li>Monitoramento On-premises com Zabbix & Grafana (Alfa Guard)</li>
+      <li>Infraestrutura em nuvem com AWS e Azure (Techwave)</li>
+      <li>Casa IOT (Grupo SmartHome)</li>
+      <li>Projeto Zabbix (Alfa Guard)</li>
+      <li>Projeto Azure (TechWave)</li>
+    </ul>
+  </section>
 
   <footer>
-    <p>© 2025 Kaique. Desenvolvido com 💻 e ☕ | <a href="#">Voltar ao topo</a></p>
+    <p>Vamos nos conectar!</p>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/kaiquebetti/">LinkedIn</a>
+    </div>
+    <p>Obrigado por visitar!</p>
   </footer>
+
 </body>
 </html>
